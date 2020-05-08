@@ -1,5 +1,10 @@
 package pl.grupa33inf.watchdog.exceptions;
 
+import android.app.Activity;
+
 public class ELogin {
-    // exceptions handling at Login
+
+    public static void loginError(Activity activity) {
+        Utils.showToast(activity,"Wrong login data");
+    }
 }
