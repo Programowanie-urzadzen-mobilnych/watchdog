@@ -2,7 +2,26 @@ package pl.grupa33inf.watchdog.exceptions;
 
 import java.io.File;
 
+/**
+ * odpowiada za tworzenie poprawnych ścieżek dla zapisywania plików.
+ * Pierwotnie ta klasa miała realizować zapis tylko dla plików layout, jednakże została stworzona w
+ * ten sposób, aby mogła być używana dla plików o różnych rozszerzeniach.
+ * @author  Alicja Jagoda & Patryk Abraś
+ * @version 1.0
+ * @since   2020-06-15
+ */
 public class ELayoutName{
+
+    /**
+     * Metoda obsługujaca ona również wyjątek w momencie, jeśli plik istnieje dodaje do niego
+     * odpowiedni numer (dodaje (1) jeśli już taki plik istnieje, jeśli natomiast plik z (1)
+     * istnieje, następuje inkrementacja i plik zostanie zapisany pod numerem nazwa_pliku(2),
+     * można w ten sposób zapisać  do 9999 plików o tej samej nazwie).
+     * @param directory parametr zawierający ścieżkę
+     * @param filename parametr nazwe pliku
+     * @param fileExtennsion parametr z rozszerzeniem pliku
+     * @return zwrócona nowa ścieżka
+     */
    public static String getNewPath(String directory, String filename, String fileExtennsion)
    {
        int l=filename.length();
@@ -33,6 +52,12 @@ public class ELayoutName{
        return path;
    }
 
+    /**
+     * Metoda służaca do zmiany liczby z nazwy
+     * @param i paramtert liczbowy z podanym indeksem
+     * @param name paramtert stringowy z podaną nazwą
+     * @return zwrócenie nowej liczby
+     */
    private static String changeNumber(int i, String name)
    {
        int num;
