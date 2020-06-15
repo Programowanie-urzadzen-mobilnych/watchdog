@@ -28,7 +28,7 @@ public class ELayoutName{
            {
                String x = changeNumber(5,filename);
                temp=filename.substring(0,l-6)+'('+x+')';
-           }} else path=directory+"/"+filename+"."+fileExtennsion;
+           }} else path=directory+"/"+filename+"(1)"+"."+fileExtennsion;
 
        return path;
    }
